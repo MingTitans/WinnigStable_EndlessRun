@@ -23,13 +23,21 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
+    var instance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {
+	                onProgress: UnityProgress,
+	                Module : {
+	                  cacheControl: {"default": "immutable"},
+	                }
+                });
+    </script>
+    <script>
       const hideFullScreenButton = "1";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/WinnigStable_EndlessRun.loader.js";
+      const loaderUrl = buildUrl + "/1de4e3bedae2380dcefcac20dc0bad02.js";
       const config = {
-        dataUrl: buildUrl + "/WinnigStable_EndlessRun.data.unityweb",
-        frameworkUrl: buildUrl + "/WinnigStable_EndlessRun.framework.js.unityweb",
-        codeUrl: buildUrl + "/WinnigStable_EndlessRun.wasm.unityweb",
+        dataUrl: buildUrl + "/33df693d1225484a817084a97942c40f.data.unityweb",
+        frameworkUrl: buildUrl + "/a316cc97cff0705e4832878996804b4d.js.unityweb",
+        codeUrl: buildUrl + "/952eb92527e79ad6c2871c67b6c6326b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "TitansWorld",
         productName: "WinnigStable_EndlessRun",
