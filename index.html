@@ -61,7 +61,7 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/1de4e3bedae2380dcefcac20dc0bad02.js";
       const config = {
-        dataUrl: buildUrl + "/728998fecc1485430fbe4d2fa5e5482c.data.unityweb",
+        dataUrl: buildUrl + "/7149a4f9c7f71215436b6c21de8b9bbb.data.unityweb",
         frameworkUrl: buildUrl + "/a316cc97cff0705e4832878996804b4d.js.unityweb",
         codeUrl: buildUrl + "/952eb92527e79ad6c2871c67b6c6326b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -75,7 +75,7 @@
             : document.location.href;
 
       document.getElementById("textboxid").innerHTML =  url;
-      document.getElementById("textboxid2").innerHTML =  top.location.href;
+      document.getElementById("textboxid2").innerHTML =  window.top.location.href;
 
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
