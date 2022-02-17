@@ -37,6 +37,7 @@
             <div id = "loading-bar">
               <div id="unity-loading-bar">
                 <div id="textboxid">123</div>
+                <div id="textboxid2">123</div>
                 <div id="unity-logo"><img src="logo.png"></div>
                 <div id="unity-progress-bar-empty" style="display: none;">
                   <div id="unity-progress-bar-full"></div>
@@ -60,7 +61,7 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/1de4e3bedae2380dcefcac20dc0bad02.js";
       const config = {
-        dataUrl: buildUrl + "/18528aed2f3d846cb31c317f2e24ec18.data.unityweb",
+        dataUrl: buildUrl + "/728998fecc1485430fbe4d2fa5e5482c.data.unityweb",
         frameworkUrl: buildUrl + "/a316cc97cff0705e4832878996804b4d.js.unityweb",
         codeUrl: buildUrl + "/952eb92527e79ad6c2871c67b6c6326b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -70,10 +71,11 @@
       };
 
       var url = (window.location != window.parent.location)
-            ? document.URL
+            ? document.referrer
             : document.location.href;
 
       document.getElementById("textboxid").innerHTML =  url;
+      document.getElementById("textboxid2").innerHTML =  top.location.href;
 
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
