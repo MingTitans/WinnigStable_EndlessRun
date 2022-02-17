@@ -60,7 +60,7 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/1de4e3bedae2380dcefcac20dc0bad02.js";
       const config = {
-        dataUrl: buildUrl + "/baf04a81f5d8fdf44ad3f4be086add6f.data.unityweb",
+        dataUrl: buildUrl + "/ed120f0301907430ba15a597b994f533.data.unityweb",
         frameworkUrl: buildUrl + "/a316cc97cff0705e4832878996804b4d.js.unityweb",
         codeUrl: buildUrl + "/952eb92527e79ad6c2871c67b6c6326b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -69,7 +69,11 @@
         productVersion: "1.0",
       };
 
-      document.getElementById("textboxid").innerHTML =  window.parent.location.href;
+      var url = (window.location != window.parent.location)
+            ? document.referrer
+            : document.location.href;
+
+      document.getElementById("textboxid").innerHTML =  url;
 
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
