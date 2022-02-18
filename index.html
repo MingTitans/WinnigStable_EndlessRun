@@ -61,7 +61,7 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/1de4e3bedae2380dcefcac20dc0bad02.js";
       const config = {
-        dataUrl: buildUrl + "/8dd6435de11e8b491e2b8d1492b5ec5e.data.unityweb",
+        dataUrl: buildUrl + "/47ba09972a607363cf8db99553e4bda4.data.unityweb",
         frameworkUrl: buildUrl + "/a316cc97cff0705e4832878996804b4d.js.unityweb",
         codeUrl: buildUrl + "/952eb92527e79ad6c2871c67b6c6326b.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
@@ -75,7 +75,23 @@
             : document.location.href;
 
       document.getElementById("textboxid").innerHTML =  url;
-      document.getElementById("textboxid2").innerHTML =  top.document.location.href;//document.URL;
+
+      var url2 = "";
+      const locationAreDisctint = (window.location !== window.parent.location);
+      const parentOrigin = ((locationAreDisctint ? document.referrer : document.location) || "").toString();
+
+      if (parentOrigin) {
+        url2 = new URL(parentOrigin).origin;
+      }
+      else
+      {
+          const currentLocation = document.location;
+
+          if (currentLocation.ancestorOrigins && currentLocation.ancestorOrigins.length) {
+            url2 = currentLocation.ancestorOrigins[0];
+      }
+  }
+      document.getElementById("textboxid2").innerHTML =  url2;//document.URL;
 
       const container = document.querySelector("#unity-container");
       const canvas = document.querySelector("#unity-canvas");
